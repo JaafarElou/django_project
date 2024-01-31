@@ -1,13 +1,15 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
 import json
 import datetime
-from .forms import CreateUserForm, UserLoginForm, UserRegistrationForm
+from .forms import CreateUserForm, UserLoginForm, UserRegistrationForm, ProductSearchForm
 from .models import *
 from .utils import cookieCart, cartData, guestOrder
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
+from .forms import ProductForm
+from django.core.paginator import Paginator
 
 
 def register(request):
@@ -66,16 +68,49 @@ def user_register(request):
     return render(request, 'store/register.html', context)
 
 
+# Add the following import at the beginning of your views.py file
+from django.db.models import Q
+
+
+# Update your store view
 def store(request):
     data = cartData(request)
-
     cartItems = data['cartItems']
     order = data['order']
     items = data['items']
 
-    products = Product.objects.all()
+    # Get the search query from the request GET parameters
+    query = request.GET.get('q')
+
+    # Filter products based on the search query
+    if query:
+        products = Product.objects.filter(
+            Q(name__icontains=query) |  # Search in product name
+            Q(description__icontains=query)  # Search in product description
+        ).distinct()
+    else:
+        # If no search query, get all products
+        products = Product.objects.all()
+
+    form = ProductSearchForm(request.GET)
+    if form.is_valid():
+        search_query = form.cleaned_data.get('search_query')
+        if search_query:
+            products = Product.objects.filter(name__icontains=search_query)
+    product_form = ProductForm()
+
+    context = {
+        'products': products,
+        'cartItems': cartItems,
+        'product_form': product_form,  # Add this line for the product form
+    }
     context = {'products': products, 'cartItems': cartItems}
     return render(request, 'store/store.html', context)
+
+
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    return render(request, 'store/product_detail.html', {'product': product})
 
 
 def cart(request):

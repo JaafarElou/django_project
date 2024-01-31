@@ -1,6 +1,8 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
+
+
 	<div class="row">
 		{% for product in products %}
 		<div class="col-lg-4">
@@ -11,12 +13,36 @@
 
 				<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
 
-				<a class="btn btn-outline-success" href="#">View</a>
-				<h4 style="display: inline-block; float: right"><strong>${{product.price}}</strong></h4>
+				<a class="btn btn-outline-success" href="{% url 'product_detail' product.id %}">View</a>
+				<h4 style=" float: right"><strong>${{product.price}}</strong></h4>
 
 			</div>
+
 		</div>
 		{% endfor %}
 	</div>
+    <div class="row mt-3">
+        <div class="col-md-3 offset-md-4">
+            <ul class="pagination">
+                {% if product_object.has_previous  %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ product_object.previous_page_number }}">Previous</a>
+                    </li>
+                {% endif %}
+
+                    <li class="page-item active">
+                        <a class="page-link" href="?page={{ product_object.number}}">{{ product_object.number}}</a>
+
+                    </li>
+
+                {% if product_object.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ product_object.next_page_number }}">Next</a>
+                </li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
 
 {% endblock content %}
