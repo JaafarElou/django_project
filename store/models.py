@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models import ForeignKey
 
 
 # Create your models here.
@@ -12,6 +13,11 @@ class Customer(models.Model):
     def __str__(self):
         return self.name
 
+class Category(models.Model):
+    cate_name = models.CharField(max_length= 60, default = 'Uncategorized')
+    def  __str__(self):
+        return self.cate_name
+
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
@@ -19,10 +25,7 @@ class Product(models.Model):
     digital = models.BooleanField(default=False, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     description = models.TextField(blank=True, null=True)
-    category = models.CharField(max_length=255, blank=True, null=True)
     rating = models.DecimalField(max_digits=3, decimal_places=2, default=0.00)
-    num_ratings = models.IntegerField(default=0)
-
     def __str__(self):
         return self.name
 
@@ -33,6 +36,7 @@ class Product(models.Model):
         except:
             url = ''
         return url
+
 
 
 class Order(models.Model):

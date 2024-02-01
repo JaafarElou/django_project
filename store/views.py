@@ -2,75 +2,48 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
 import json
 import datetime
-from .forms import CreateUserForm, UserLoginForm, UserRegistrationForm, ProductSearchForm
+from .forms import UserCreationForm, LoginForm, ProductSearchForm
 from .models import *
 from .utils import cookieCart, cartData, guestOrder
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
-from .forms import ProductForm
-from django.core.paginator import Paginator
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def register(request):
-    form = CreateUserForm()
-
     if request.method == 'POST':
-        form = CreateUserForm(request.POST)
+        form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}! You can now log in.')
-            return redirect('login')
-
-    context = {'form': form}
-    return render(request, 'store/register.html', context)
-
-
-def user_login(request):
-    if request.method == 'POST':
-        form = UserLoginForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(request, username=username, password=password)
-
-            if user is not None:
-                login(request, user)
-                messages.success(request, f'Welcome back, {username}!')
-                return redirect('store')
-            else:
-                messages.warning(request, 'Invalid username or password.')
-
-    form = UserLoginForm()
-    context = {'form': form}
-    return render(request, 'store/login.html', context)
-
-
-def user_logout(request):
-    logout(request)
-    messages.info(request, 'You have been logged out.')
-    return redirect('store')
-
-
-def user_register(request):
-    if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}!')
             return redirect('login')
     else:
-        form = UserRegistrationForm()
+        form = UserCreationForm()
+    return render(request, 'store/register.html', {'form': form})
 
-    context = {'form': form}
-    return render(request, 'store/register.html', context)
+# login page
+def user_login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                print(f"User is authenticated successfully.")
+                return redirect('store')
+    else:
+        form = LoginForm()
+    return render(request, 'store/login.html', {'form': form})
+
+# logout page
+def user_logout(request):
+    logout(request)
+    return redirect('login')
 
 
 # Add the following import at the beginning of your views.py file
 from django.db.models import Q
-
 
 # Update your store view
 def store(request):
@@ -97,21 +70,24 @@ def store(request):
         search_query = form.cleaned_data.get('search_query')
         if search_query:
             products = Product.objects.filter(name__icontains=search_query)
-    product_form = ProductForm()
 
-    context = {
-        'products': products,
-        'cartItems': cartItems,
-        'product_form': product_form,  # Add this line for the product form
-    }
-    context = {'products': products, 'cartItems': cartItems}
+    page = request.GET.get('page', 1)
+    paginator = Paginator(products, 3)  # Show 10 products per page
+
+    try:
+        paginated_products = paginator.page(page)
+    except PageNotAnInteger:
+        paginated_products = paginator.page(1)
+    except EmptyPage:
+        paginated_products = paginator.page(paginator.num_pages)
+
+    context = {'products': paginated_products, 'cartItems': cartItems, 'form': form}
     return render(request, 'store/store.html', context)
 
 
 def product_detail(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     return render(request, 'store/product_detail.html', {'product': product})
-
 
 def cart(request):
     data = cartData(request)
