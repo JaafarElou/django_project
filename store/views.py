@@ -10,15 +10,18 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
+            Customer.objects.create(user=user)
             return redirect('login')
     else:
         form = UserCreationForm()
     return render(request, 'store/register.html', {'form': form})
+
 
 # login page
 def user_login(request):
@@ -36,6 +39,7 @@ def user_login(request):
         form = LoginForm()
     return render(request, 'store/login.html', {'form': form})
 
+
 # logout page
 def user_logout(request):
     logout(request)
@@ -44,6 +48,7 @@ def user_logout(request):
 
 # Add the following import at the beginning of your views.py file
 from django.db.models import Q
+
 
 # Update your store view
 def store(request):
@@ -72,7 +77,7 @@ def store(request):
             products = Product.objects.filter(name__icontains=search_query)
 
     page = request.GET.get('page', 1)
-    paginator = Paginator(products, 3)  # Show 10 products per page
+    paginator = Paginator(products, 3)  # Show 3 products per page
 
     try:
         paginated_products = paginator.page(page)
@@ -81,13 +86,15 @@ def store(request):
     except EmptyPage:
         paginated_products = paginator.page(paginator.num_pages)
 
-    context = {'products': paginated_products, 'cartItems': cartItems, 'form': form}
+    categories = Category.objects.all()
+    context = {'products': paginated_products, 'cartItems': cartItems, 'form': form, 'categories': categories}
     return render(request, 'store/store.html', context)
 
 
 def product_detail(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     return render(request, 'store/product_detail.html', {'product': product})
+
 
 def cart(request):
     data = cartData(request)
@@ -165,4 +172,18 @@ def processOrder(request):
         )
 
     return JsonResponse('Payment submitted..', safe=False)
-#hi
+
+
+def filtered_category(request):
+    selected_category_id = request.GET.get('categoryFilter')
+    if selected_category_id:
+        selected_category = Category.objects.get(id=selected_category_id)
+        products = Product.objects.filter(category=selected_category)
+    else:
+        # If no category is selected, show all products
+        selected_category = Category.objects.all()
+        products = Product.objects.all()
+
+    categories = Category.objects.all()
+    return render(request, 'store/store.html',
+                  {'selected_category': selected_category, 'products': products, 'categories': categories})
