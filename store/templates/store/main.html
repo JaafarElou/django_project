@@ -2,7 +2,7 @@
 {% load static %}
 <html>
 <head>
-	<title>SOUQ</title>
+	<title>JKOAshop</title>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy2F7AkozIbbjK8ERdknWbPUq3L4Eg1pC" crossorigin="anonymous">
 
@@ -66,8 +66,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        
-	  <a class="navbar-brand" href="{% url 'store' %}"><img src="static/images/[removal.ai]_a82b1620-8811-4e27-bf75-a72aa4837636-j.png" style="width:65px;height:60px;color:text-light"></a>
+	  <a class="navbar-brand" href="{% url 'store' %}"><img src="{% static  'images/Logo.png' %}" style="width:65px;height:60px;color:text-light"></a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -95,6 +94,7 @@
 					<button type="submit" class="btn btn-primary">Apply Filter</button>
 				</form>
 				<div class="dropdown-divider"></div>
+            </div>
         </li>
 	    </ul>
         <div class="search-bar">
