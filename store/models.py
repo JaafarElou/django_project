@@ -11,7 +11,7 @@ class Customer(models.Model):
     email = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.name
+        return self.user.username
 
 class Category(models.Model):
     cate_name = models.CharField(max_length= 60, default = 'Uncategorized')
