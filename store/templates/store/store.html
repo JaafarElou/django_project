@@ -1,69 +1,103 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-
-    <div class="welcome-message text-center">
-        {% if user.is_authenticated %}
-            <h2 class="text-success">Welcome, {{ user.username }}!</h2>
-            <!-- Additional customer-related information can be added here -->
-        {% else %}
-            <h2 class="text-secondary">Welcome, Guest!</h2>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+<div class="welcome-message text-center">
+    {% if user.is_authenticated %}
+        <h2 class="text-gold" style="color: gold">Welcome, {{ user.username }}!</h2>
+        <!-- Additional customer-related information can be added here -->
+    {% else %}
+        <h2 class="text-black" style="color: black">Welcome, Guest!</h2>
     {% endif %}
+</div>
+    
+    <section class="section-products">
+    <div class="container">
+            <div class="row justify-content-center text-center">
+                    <div class="col-md-8 col-lg-6">
+                            <div class="header">
+                                    <h3>Featured Product</h3>
+                                    <h2>Popular Products</h2>
+                            </div>
+                    </div>
+            </div>
+    <div class="row">
+                {% for product in products %}
+                    <!-- Single Product -->
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                            <div id="product-1" class="single-product">
+                                    <div class="part-1 card">
+                                        <div class="badge bg-black text-gold position-absolute" style="top: 0.5rem; right: 0.5rem; color: gold; background-color: black">
+                                            {{ product.category }}</div>
+                                        <img src="{{ product.imageURL }}" alt="{{ product.name }}">
+                                            <ul>
+                                                
+                                                    <li>
+                                                        <button data-product="{{ product.id }}" data-action="add" class="btn btn-outline-transparent bg-white text-dark add-btn update-cart" >
+                                                            <i class="fas fa-shopping-cart"></i>
+                                                        </button>
+                                                    </li>
+                                                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                    <li><a href="#"><i class="fas fa-heart" ></i></a></li>
+                                                    <li><a href="{% url 'product_detail' product.id %}"><i class="fas fa-expand"></i></a></li>
+                                            </ul>
+                                    </div>
+                                    <div class="part-2">
+                                            <h3 class="product-title text-center">{{ product.name }}</h3>
+                                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                                <div class="bi-star-fill"></div>
+                                                <div class="bi-star-fill"></div>
+                                                <div class="bi-star-fill"></div>
+                                                <div class="bi-star-fill"></div>
+                                                <div class="bi-star-fill"></div>
+                                            </div>
+                                            <div class="text-center">
+                                            <h4 class="product-old-price text-danger">${{ product.price }}</h4>
+                                            <h4 class="product-price text-success">${{ product.price }}</h4>
+                                            </div>
+                                    </div>
+                            </div>
+                    </div>
+                    {% endfor %}
+            </div>
     </div>
-	<div class="row">
-		{% for product in products %}
-		<div class="col-lg-4">
-			<img class="thumbnail" src="{{product.imageURL}}">
-			<div class="box-element product">
-				<h6><strong>{{product.name}}</strong></h6>
-				<hr>
-
-				<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-
-				<a class="btn btn-outline-success" href="{% url 'product_detail' product.id %}">View</a>
-				<h4 style="float: right"><strong>${{product.price}}</strong></h4>
-
-			</div>
-			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy2F7AkozIbbjK8ERdknWbPUq3L4Eg1pC" crossorigin="anonymous">
-
-		</div>
-		{% endfor %}
-		<div class="container text-center my-5">
+</section>
+    <div class="container text-center my-5">
 		<div class="pagination justify-content-center">
-			<ul class="pagination ">
+			<ul class="pagination">
 			  {% if products.has_previous %}
 				<li class="page-item">
-				  <a class="page-link" href="?page=1" aria-label="First">
+				  <a class="text-dark page-link" href="?page=1" aria-label="First">
 					<span aria-hidden="true">&laquo;&laquo;</span>
 				  </a>
 				</li>
 				<li class="page-item">
-				  <a class="page-link" href="?page={{ products.previous_page_number }}" aria-label="Previous">
+				  <a class="text-dark page-link" href="?page={{ products.previous_page_number }}" aria-label="Previous">
 					<span aria-hidden="true">&laquo;</span>
 				  </a>
 				</li>
 			  {% endif %}
-
+				
 			  {% for i in products.paginator.page_range %}
 				{% if products.number == i %}
 				  <li class="page-item active">
-					<span class="page-link">{{ i }} <span class="sr-only">(current)</span></span>
+					<span class="bg-dark text-light page-link">{{ i }} <span class="sr-only">(current)</span></span>
 				  </li>
 				{% else %}
 				  <li class="page-item">
-					<a class="page-link" href="?page={{ i }}">{{ i }}</a>
+					<a class="text-dark page-link" href="?page={{ i }}">{{ i }}</a>
 				  </li>
 				{% endif %}
 			  {% endfor %}
-
+		  
 			  {% if products.has_next %}
 				<li class="page-item">
-				  <a class="page-link" href="?page={{ products.next_page_number }}" aria-label="Next">
+				  <a class="text-dark page-link" href="?page={{ products.next_page_number }}" aria-label="Next">
 					<span aria-hidden="true">&raquo;</span>
 				  </a>
 				</li>
 				<li class="page-item">
-				  <a class="page-link" href="?page={{ products.paginator.num_pages }}" aria-label="Last">
+				  <a class="text-dark page-link" href="?page={{ products.paginator.num_pages }}" aria-label="Last">
 					<span aria-hidden="true">&raquo;&raquo;</span>
 				  </a>
 				</li>
@@ -71,5 +105,4 @@
 			</ul>
 		</div>
 	</div>
-
-{% endblock content %}
+    {% endblock content %}

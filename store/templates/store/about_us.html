@@ -1,0 +1,87 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<head>
+    
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1, h2 {
+            color: #000000;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        p {
+            color: #000000;
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .team-member {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            max-width: 150px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>About Our Company</h1>
+    </header>
+
+    <section>
+        <p>Welcome to our e-commerce platform. We are dedicated to providing high-quality products and excellent customer service. Our team is passionate about delivering a seamless shopping experience for our customers.</p>
+    </section>
+
+    <section>
+        <h2>Meet Our Team</h2>
+
+        <div class="team-member">
+            <img src="{% static 'images/team_member1.jpg' %}" alt="Team Member 1">
+            <p>John Doe</p>
+            <p>Founder & CEO</p>
+        </div>
+
+        <div class="team-member">
+            <img src="{% static 'images/team_member2.jpg' %}" alt="Team Member 2">
+            <p>Jane Smith</p>
+            <p>Marketing Director</p>
+        </div>
+        <!-- Add more team members as needed -->
+    </section>
+
+    <section>
+        <p>Contact us at info@example.com | Follow us on social media @yourcompany</p>
+    </section>
+    </div>
+
+</body>
+</html>
+{% endblock content %}

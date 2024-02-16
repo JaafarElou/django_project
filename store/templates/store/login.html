@@ -1,10 +1,50 @@
 {% extends 'store/main.html' %}
+{% load static %}
 {% block content %}
+
+
+
+
 <div class="container">
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-    </form>
-</div>
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+          <div class="card-img-left d-none d-md-flex">
+            <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
+            <form method="post">
+                {% csrf_token %}
+                
+
+              <div class="form-floating mb-3">
+                  {{ form.username }}
+                <label for="floatingInputUsername">Username</label>
+              </div>
+
+              
+
+              <div class="form-floating mb-3">
+                  {{ form.password }}
+                <label for="floatingPassword">Password</label>
+              </div>
+
+              
+
+              <div class="d-grid mb-2">
+                <button class="btn btn-dark mx-2 custom-btn2" type="submit">Login</button>
+              </div>
+
+
+              
+
+              
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock content %}

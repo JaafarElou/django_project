@@ -3,7 +3,7 @@
 {% extends 'store/main.html' %}
 
 {% block content %}
-    </div>
+    <div class="container">
     <div class="row">
         <div class="col-md-6">
             <div>
@@ -26,9 +26,13 @@
             <div>
                 <button data-product="{{product.id}}" data-action="add" class="btn btn-success add-btn update-cart">Add to Cart</button>
             </div>
+            &nbsp;
             <div>
                 <a type="button" class="btn btn-outline-secondary" href="{% url 'store' %}">Back to Store</a>
             </div>
         </div>
     </div>
+    </div>
+    
+    
 {% endblock content %}

@@ -15,5 +15,7 @@ urlpatterns = [
     path('logout/', views.user_logout, name='logout'),
     path('search/', views.store, name='search'),
     path('product/<int:product_id>/', views.product_detail, name='product_detail'),
-    path('filtered_category/', views.filtered_category, name='filtered_category')
+    path('filtered_category/', views.filtered_category, name='filtered_category'),
+    path('about-us/', views.about_us, name='about_us'),
 ]
+

@@ -5,17 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88478745-d8a9-403d-8bc2-91238d22c13d" name="Changes" comment="Updates">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/4152006_54df_5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/Logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dx2687_456_nike_barca_home_jsy_2023_24_sm_01-768x768.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/eae07fdf-29f2-4357-b02f-e1dc0816f9e0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/headphones_y1CrXIC_X4oiZGe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/migrations/0007_product_category.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/migrations/0008_remove_order_customer_order_user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/migrations/0009_remove_order_user_order_customer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/CSS/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/CSS/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/Cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/Cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/store.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +113,14 @@
       <workItem from="1707074402750" duration="169000" />
       <workItem from="1707131794729" duration="5723000" />
       <workItem from="1707139784074" duration="1014000" />
-      <workItem from="1707165443613" duration="816000" />
+      <workItem from="1707165443613" duration="4251000" />
+      <workItem from="1707228895463" duration="3982000" />
+      <workItem from="1707506335439" duration="3936000" />
+      <workItem from="1707576558860" duration="7243000" />
+      <workItem from="1707739964026" duration="8403000" />
+      <workItem from="1707822403760" duration="554000" />
+      <workItem from="1707849408926" duration="10689000" />
+      <workItem from="1707989107500" duration="8833000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <option name="closed" value="true" />
@@ -138,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707072819261</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Updates">
+      <option name="closed" value="true" />
+      <created>1707166299468</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707166299468</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

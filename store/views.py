@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
 import json
 import datetime
-from .forms import UserCreationForm, LoginForm, ProductSearchForm
+from .forms import UserCreationForm, LoginForm, ProductSearchForm, SignupForm
 from .models import *
 from .utils import cookieCart, cartData, guestOrder
 from django.contrib.auth.forms import AuthenticationForm
@@ -13,13 +13,13 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = SignupForm(request.POST)
         if form.is_valid():
             user = form.save()
             Customer.objects.create(user=user)
             return redirect('login')
     else:
-        form = UserCreationForm()
+        form = SignupForm()
     return render(request, 'store/register.html', {'form': form})
 
 
@@ -77,7 +77,7 @@ def store(request):
             products = Product.objects.filter(name__icontains=search_query)
 
     page = request.GET.get('page', 1)
-    paginator = Paginator(products, 3)  # Show 3 products per page
+    paginator = Paginator(products, 4)  # Show 3 products per page
 
     try:
         paginated_products = paginator.page(page)
@@ -187,3 +187,6 @@ def filtered_category(request):
     categories = Category.objects.all()
     return render(request, 'store/store.html',
                   {'selected_category': selected_category, 'products': products, 'categories': categories})
+
+def about_us(request):
+    return render(request, 'store/about_us.html')
