@@ -10,30 +10,31 @@
       <div class="col-lg-10 col-xl-9 mx-auto">
         <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
           <div class="card-img-left d-none d-md-flex">
-            <!-- Background image for card set in CSS! -->
+            <img src="{% static 'images\Login.png' %}" alt="">
           </div>
           <div class="card-body p-4 p-sm-5">
-            <h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
+            <h5 class="card-title text-center mb-5 fw-light fs-5" style="font-family: serif; font-weight: bold; color: #362119;" >Welcome Back</h5>
             <form method="post">
                 {% csrf_token %}
                 
 
               <div class="form-floating mb-3">
-                  {{ form.username }}
-                <label for="floatingInputUsername">Username</label>
+                <label for="floatingInputUsername" style="font-family: serif;">Username</label>   
+                {{ form.username }}
               </div>
 
               
 
               <div class="form-floating mb-3">
-                  {{ form.password }}
-                <label for="floatingPassword">Password</label>
+                <label for="floatingPassword" style="font-family: serif";>Password</label>
+                {{ form.password }}
+                
               </div>
 
               
 
-              <div class="d-grid mb-2">
-                <button class="btn btn-dark mx-2 custom-btn2" type="submit">Login</button>
+              <div class="d-grid mb-2" style="font-family: serif">
+                <button class="btn btn-dark mx-2 custom-btn2"  type="submit">Login</button>
               </div>
 
 
@@ -47,4 +48,5 @@
       </div>
     </div>
   </div>
+    
 {% endblock content %}

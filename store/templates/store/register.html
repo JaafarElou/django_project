@@ -10,41 +10,41 @@
       <div class="col-lg-10 col-xl-9 mx-auto">
         <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
           <div class="card-img-left d-none d-md-flex">
-            <!-- Background image for card set in CSS! -->
+            <img src="{% static 'images\Register.png' %}" alt="">
           </div>
           <div class="card-body p-4 p-sm-5">
-            <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
+            <h5 class="card-title text-center mb-5 fw-light fs-5" style="font-weight: bold; color: #362119;">Fill Your Informations</h5>
             <form method="post">
                 {% csrf_token %}
                 
 
               <div class="form-floating mb-3">
-                  {{ form.username }}
-                <label for="floatingInputUsername">Username</label>
+                <label for="floatingInputUsername" style="font-family: serif;">Username</label>
+                {{ form.username }}
               </div>
 
               <div class="form-floating mb-3">
-                  {{ form.email }}
-                <label for="floatingInputEmail">Email address</label>
+                <label for="floatingInputEmail" style="font-family: serif;">Email address</label>
+                {{ form.email }}
               </div>
 
               
 
               <div class="form-floating mb-3">
-                  {{ form.password1 }}
-                <label for="floatingPassword">Password</label>
+                <label for="floatingPassword" style="font-family: serif;">Password</label>
+                {{ form.password1 }}
               </div>
 
               <div class="form-floating mb-3">
-                  {{ form.password2 }}
-                <label for="floatingPasswordConfirm">Confirm Password</label>
+                <label for="floatingPasswordConfirm" style="font-family: serif;">Confirm Password</label>
+                {{ form.password2 }}
               </div>
 
               <div class="d-grid mb-2">
-                <button class="btn btn-dark mx-2 custom-btn2" type="submit">Register</button>
+                <button class="btn btn-dark mx-2 custom-btn2"style="font-family: serif" type="submit">Register</button >
               </div>
 
-              <a class="d-block text-center mt-2 small" href="{% url 'login' %}">Have an account? Login</a>
+              <a class="d-block text-center mt-2 small" style="font-family: serif" href="{% url 'login' %}">Have an account? Login</a>
 
               
 

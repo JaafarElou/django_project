@@ -13,20 +13,24 @@ class Customer(models.Model):
     def __str__(self):
         return self.user.username
 
+
 class Category(models.Model):
-    cate_name = models.CharField(max_length= 60, default = 'Uncategorized')
-    def  __str__(self):
+    cate_name = models.CharField(max_length=60, default='Uncategorized')
+
+    def __str__(self):
         return self.cate_name
 
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE,default = 1)
-    price = models.DecimalField(max_digits=7, decimal_places=2)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
+    old_price = models.DecimalField(max_digits=7, decimal_places=2)
+    new_price = models.DecimalField(max_digits=7, decimal_places=2)
     digital = models.BooleanField(default=False, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     description = models.TextField(blank=True, null=True)
     rating = models.DecimalField(max_digits=3, decimal_places=2, default=0.00)
+
     def __str__(self):
         return self.name
 
@@ -37,7 +41,6 @@ class Product(models.Model):
         except:
             url = ''
         return url
-
 
 
 class Order(models.Model):
@@ -79,7 +82,7 @@ class OrderItem(models.Model):
 
     @property
     def get_total(self):
-        total = self.product.price * self.quantity
+        total = self.product.new_price * self.quantity
         return total
 
 
@@ -94,3 +97,4 @@ class ShippingAddress(models.Model):
 
     def __str__(self):
         return self.address
+

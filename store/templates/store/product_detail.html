@@ -3,36 +3,45 @@
 {% extends 'store/main.html' %}
 
 {% block content %}
+   
     <div class="container">
     <div class="row">
         <div class="col-md-6">
             <div>
-                <img style="float:right" src="{{ product.imageURL }}" width="500px" height="400px" alt="">
+                <img style="float: none" src="{{ product.imageURL }}" width="390px" height="520px" alt="">
             </div>
         </div>
         <div class="col-md-6">
-            <div class="text-warning display-3">
+            <div class="text-silver display-3" style="color: #362119; font-size: xxx-large; font-family: serif;">
                 {{ product.name }}
             </div>
-            <div class="text-danger">
-                Price: ${{ product.price }}
+            <div class="container">
+                <div class="row">
+              <h4 class="product-old-price" style="color: #575353;">${{ product.old_price }}</h4>
+              <h4 class="product-price" style="margin-left: 10px; color: rgb(240, 195, 136);">${{ product.new_price }}</h4>
+                </div>
             </div>
-            <div class="text">
-                Category: {{ product.category }}
+            
+            <div style="font-family: serif;">
+                <p>Category : {{product.category}}</p>
             </div>
+            <div style="font-family: serif;">
+                <p class="product-description">Description :</p>
+                <p>{{ product.description }}</p>
+            </div>
+            <div class="row">
             <div>
-                <p>Description: {{ product.description }}</p>
-            </div>
-            <div>
-                <button data-product="{{product.id}}" data-action="add" class="btn btn-success add-btn update-cart">Add to Cart</button>
+                <button data-product="{{product.id}}" data-action="add" class="btn btn-dark mx-2 custom-btn2 update-cart"style="font-family: serif;">Add to Cart</button>
             </div>
             &nbsp;
             <div>
-                <a type="button" class="btn btn-outline-secondary" href="{% url 'store' %}">Back to Store</a>
+                <a type="button" class="btn btn-dark mx-2 custom-btn3" style="font-family: serif;" href="{% url 'store' %}">Back to Store</a>
+            </div>
             </div>
         </div>
     </div>
     </div>
-    
-    
+
+    <br><br><br>
 {% endblock content %}
+

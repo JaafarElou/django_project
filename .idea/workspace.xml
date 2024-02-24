@@ -4,18 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88478745-d8a9-403d-8bc2-91238d22c13d" name="Changes" comment="Updates">
+    <list default="true" id="8e0e330f-ad28-418c-86c6-2f0f28dbe63b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Ecommerce-project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/CSS/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/CSS/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/4152006_54df_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/Croissant.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/book.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/dx2687_456_nike_barca_home_jsy_2023_24_sm_01-768x768.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/eae07fdf-29f2-4357-b02f-e1dc0816f9e0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/headphones.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/headphones_y1CrXIC_X4oiZGe.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/store/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/templates/store/Cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/Cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/Checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/Checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/about_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/about_us.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/templates/store/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/templates/store/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/templates/store/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/product_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/templates/store/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/templates/store/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/store.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,54 +37,38 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
-    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
-  </component>
-  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
-    <envs>
-      <env key="FLASK_APP" value="app" />
-    </envs>
-    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
-    <option name="myEnvs">
-      <map>
-        <entry key="FLASK_APP" value="app" />
-      </map>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
-}</component>
-  <component name="ProjectId" id="2bu6z78Wimte0hsDYkFFrDgzURz" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2cn7x68MiRA2Cltn2EpuEAtZg26" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ouazd/Desktop/Ecommerce-project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/ouazd/Desktop/Ecommerce-project - Copie",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
-    <configuration name="Ecommerce-project" type="Python.DjangoServer" factoryName="Django server">
-      <module name="Ecommerce-project" />
+    <configuration name="djaango" type="Python.DjangoServer" factoryName="Django server">
+      <module name="djaango" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -104,75 +102,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="88478745-d8a9-403d-8bc2-91238d22c13d" name="Changes" comment="" />
-      <created>1707052876213</created>
+      <changelist id="8e0e330f-ad28-418c-86c6-2f0f28dbe63b" name="Changes" comment="" />
+      <created>1708735738269</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1707052876213</updated>
-      <workItem from="1707052877161" duration="17246000" />
-      <workItem from="1707074402750" duration="169000" />
-      <workItem from="1707131794729" duration="5723000" />
-      <workItem from="1707139784074" duration="1014000" />
-      <workItem from="1707165443613" duration="4251000" />
-      <workItem from="1707228895463" duration="3982000" />
-      <workItem from="1707506335439" duration="3936000" />
-      <workItem from="1707576558860" duration="7243000" />
-      <workItem from="1707739964026" duration="8403000" />
-      <workItem from="1707822403760" duration="554000" />
-      <workItem from="1707849408926" duration="10689000" />
-      <workItem from="1707989107500" duration="8833000" />
+      <updated>1708735738269</updated>
+      <workItem from="1708735740740" duration="1614000" />
     </task>
-    <task id="LOCAL-00001" summary="Updates">
-      <option name="closed" value="true" />
-      <created>1707066272323</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1707066272324</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Updates">
-      <option name="closed" value="true" />
-      <created>1707071747810</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1707071747810</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Updates">
-      <option name="closed" value="true" />
-      <created>1707072819261</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1707072819261</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Updates">
-      <option name="closed" value="true" />
-      <created>1707166299468</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1707166299468</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates" />
   </component>
 </project>

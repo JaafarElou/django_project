@@ -15,8 +15,11 @@ def register(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            Customer.objects.create(user=user)
+            user = form.save(commit=False)
+            user.save()
+            email = form.cleaned_data['email']
+            name = form.cleaned_data['username']
+            Customer.objects.create(user=user, name=name,email = email)
             return redirect('login')
     else:
         form = SignupForm()
@@ -77,7 +80,7 @@ def store(request):
             products = Product.objects.filter(name__icontains=search_query)
 
     page = request.GET.get('page', 1)
-    paginator = Paginator(products, 4)  # Show 3 products per page
+    paginator = Paginator(products, 8)
 
     try:
         paginated_products = paginator.page(page)
@@ -188,5 +191,8 @@ def filtered_category(request):
     return render(request, 'store/store.html',
                   {'selected_category': selected_category, 'products': products, 'categories': categories})
 
+
 def about_us(request):
     return render(request, 'store/about_us.html')
+
+

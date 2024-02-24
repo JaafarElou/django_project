@@ -2,8 +2,8 @@
 {% load static %}
 <html>
 <head>
-	<title>JOKA Shop</title>
-    <link rel="icon" type="image/x-icon" href="images/Anime 2.ico" />
+	<title>JO&KA Shop</title>
+    <link rel="icon" type="image/x-icon" href="images/joka logo.png" />
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy2F7AkozIbbjK8ERdknWbPUq3L4Eg1pC" crossorigin="anonymous">
 
@@ -68,9 +68,9 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="height: 70px;">
         
-	  <a class="navbar-brand" href="{% url 'store' %}"><img src="{% static  'images/Logo2.png' %}" style="width:65px;height:60px"></a>
+	  <a class="navbar-brand" href="{% url 'store' %}"><img src="{% static  'images/joka logo.png' %}" style="width:65px;height:60px"></a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -78,46 +78,57 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
-	        <a class="nav-link" href="{% url 'store' %}">Homepage <span class="sr-only">(current)</span></a>
+	        <a class="nav-link" style="font-weight: bold; font-family: serif;" href="{% url 'store' %}">Homepage <span class="sr-only">(current)</span></a>
 	      </li>
 		  <li class="nav-item dropdown">
-			<a class="nav-link dropdown-toggle" href="{% url 'filtered_category' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black">
+			<a class="nav-link dropdown-toggle" href="{% url 'filtered_category' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgb(0, 0, 0); font-weight: bold; font-family: serif;">
 				Categories
 			</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 				<form class="dropdown-item p-3" action="{% url 'filtered_category' %}" method="get">
 					<div class="form-group">
-						<label for="categoryFilter">Filter by Category:</label>
-						<select class="form-control" id="categoryFilter" name="categoryFilter">
-							<option value="" selected>All Categories</option>
+						
+						<select class="form-control" style="font-family: serif;"id="categoryFilter" name="categoryFilter">
+							<option value="" style="font-family: serif;">All Categories</option>
 							{% for category in categories %}
-								<option value="{{ category.id }}">{{ category.cate_name }}</option>
+								<option value="{{ category.id }}" style="font-family: serif;">{{ category.cate_name }}</option>
 							{% endfor %}
 						</select>
 					</div>
-					<button type="submit" class="btn btn-dark">Apply Filter</button>
+                    <div class="dropdown-divider"></div>
+					<button type="submit" class="btn btn-black text-white" style="background-color: #C69B73; font-family: serif;">Get Products</button>
 				</form>
-				<div class="dropdown-divider"></div>
+				
           </li>
             <li class="nav-item">
-                <a class="nav-link text-dark" href="{% url 'about_us' %}">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#">Contact Us</a>
-            </li>
+			<a class="nav-link text-dark" href="{% url 'about_us' %}" style="margin-right: 100px; white-space: nowrap; font-weight: bold; font-family: serif;">About Us</a>
+		</li>
+		
+          
+        
+        
+	    </ul> 
+		<div class="container"> 
+			<a class="navbar-brand mx-auto" href="{% url 'store' %}">
+				<img src="{% static 'images/&.png' %}" style="width:220px;height:50px" alt="Logo">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+        
         
 	    </ul> 
 
 		<div class="InputContainer" >
 			<form method="get" action="{% url 'search' %}">
-			<input placeholder="Search.." id="input" class="input" name="q" type="text">
+			<input placeholder="Search..." style="font-family: serif;" id="input" class="input" name="q" type="text">
 			</form>
 		</div>
 
-		
+      
 		  
 		
-	    <div class="form-inline my-2 my-lg-0">
+	    <div class="form-inline my-2 my-lg-0" style="margin-left: 10px">
             {% if user.is_authenticated %}
 			<form action="{% url 'logout' %}" method="post">
 				{% csrf_token %}
@@ -130,8 +141,8 @@
 			</form>
 
             {% else %}
-                <a href="{% url 'register' %}" class="btn btn mx-2 custom-btn" style="margin-left: 10px;">Register</a>
-                <a href="{% url 'login' %}" class="btn btn mx-2 custom-btn" style="margin-left: 10px;">Login</a>
+                <a href="{% url 'register' %}" class="btn btn mx-2 custom-btn" style="margin-left: 0px; font-family: serif;">Register</a>
+                <a href="{% url 'login' %}" class="btn btn mx-2 custom-btn" style="margin-left: 0px;font-family: serif;">Login</a>
 
             {% endif %}
 
@@ -144,14 +155,9 @@
 	    </div>
 	  </div>
 	</nav>
-    <header class="bg-black py-5" style="background-color: black;">
-            <div class="container px-4 px-lg-5 my-5" >
-                <div class="text-center text-white" >
-                    <h1 class="display-4 fw-bolder text-light">Shop in style</h1>
-                    <p class="lead fw-normal text-gold-50 mb-0" style="color: gold">With this shop hompeage template</p>
-                </div>
-            </div>
-        </header>
+    <br><br><br>
+    {% block banner_slider %}{% endblock banner_slider %}
+    
      <div class="container">
             <br>
             {% block content %}
@@ -160,81 +166,12 @@
             {% endblock content %}
          </div>
     
-		<!-- Footer -->
-		<footer class="text-center bg-body-tertiary">
-			<!-- Grid container -->
-			<div class="container pt-4">
-			  <!-- Section: Social media -->
-			  <section class="mb-4">
-				<!-- Facebook -->
-				<a
-				  data-mdb-ripple-init
-				  class="btn btn-link btn-floating btn-lg text-body m-1"
-				  href="#!"
-				  role="button"
-				  data-mdb-ripple-color="dark"
-				  ><i class="fab fa-facebook-f"></i
-				></a>
-		  
-				<!-- Twitter -->
-				<a
-				  data-mdb-ripple-init
-				  class="btn btn-link btn-floating btn-lg text-body m-1"
-				  href="#!"
-				  role="button"
-				  data-mdb-ripple-color="dark"
-				  ><i class="fab fa-twitter"></i
-				></a>
-		  
-				<!-- Google -->
-				<a
-				  data-mdb-ripple-init
-				  class="btn btn-link btn-floating btn-lg text-body m-1"
-				  href="#!"
-				  role="button"
-				  data-mdb-ripple-color="dark"
-				  ><i class="fab fa-google"></i
-				></a>
-		  
-				<!-- Instagram -->
-				<a
-				  data-mdb-ripple-init
-				  class="btn btn-link btn-floating btn-lg text-body m-1"
-				  href="#!"
-				  role="button"
-				  data-mdb-ripple-color="dark"
-				  ><i class="fab fa-instagram"></i
-				></a>
-		  
-				<!-- Linkedin -->
-				<a
-				  data-mdb-ripple-init
-				  class="btn btn-link btn-floating btn-lg text-body m-1"
-				  href="#!"
-				  role="button"
-				  data-mdb-ripple-color="dark"
-				  ><i class="fab fa-linkedin"></i
-				></a>
-				<!-- Github -->
-				<a
-				  data-mdb-ripple-init
-				  class="btn btn-link btn-floating btn-lg text-body m-1"
-				  href="#!"
-				  role="button"
-				  data-mdb-ripple-color="dark"
-				  ><i class="fab fa-github"></i
-				></a>
-			  </section>
-			  <!-- Section: Social media -->
+		
+		<footer>
+			<div class="container-fluid fixed-bottom text-center p-1" style="background-color: #C69B73;">
+			  <a class="text-light" style="font-family: serif;">© 2024 Copyright | Developped By JO & KA Team</a>
+			  
 			</div>
-			<!-- Grid container -->
-		  
-			<!-- Copyright -->
-			<div class="text-center p-3" style="background-color: black;">
-			  <a class="text-light">© 2024 Copyright:</a>
-			  <a class="text-light" href="#">DSEF.com</a>
-			</div>
-			<!-- Copyright -->
 		  </footer>
 
 
