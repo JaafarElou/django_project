@@ -4,33 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e0e330f-ad28-418c-86c6-2f0f28dbe63b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Ecommerce-project.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="8e0e330f-ad28-418c-86c6-2f0f28dbe63b" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/CSS/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/CSS/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/4152006_54df_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/Croissant.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/book.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/dx2687_456_nike_barca_home_jsy_2023_24_sm_01-768x768.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/eae07fdf-29f2-4357-b02f-e1dc0816f9e0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/headphones.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/headphones_y1CrXIC_X4oiZGe.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/templates/store/Cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/Cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/templates/store/Checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/Checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/templates/store/about_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/about_us.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/templates/store/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/templates/store/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/templates/store/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/product_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/templates/store/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/templates/store/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/store.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,11 +82,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708735738269</updated>
-      <workItem from="1708735740740" duration="1614000" />
+      <workItem from="1708735740740" duration="3013000" />
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <option name="closed" value="true" />
+      <created>1708737687001</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708737687001</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>
